@@ -1,0 +1,24 @@
+{
+  "name": "xhopii",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type":"module",
+  "scripts": {
+    "start": "node server.js",
+    "test": "N/A"
+  },
+  "keywords": [],
+  "author": "Wellington Fonseca e Vinicius Dias",
+  "license": "ISC",
+  "description": "Projeto de um e-commerce",
+  "dependencies": {
+    "compression": "^1.8.0",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.1.0",
+    "mongoose": "^8.12.1",
+    "morgan": "^1.10.0"
+  }
+}

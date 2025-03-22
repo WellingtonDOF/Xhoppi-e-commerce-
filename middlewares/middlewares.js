@@ -6,6 +6,7 @@ import helmet from 'helmet';
 import compression from 'compression';
 import rateLimit from 'express-rate-limit';
 import morgan from 'morgan';
+import uploadMiddleware from './uploadMiddleware.js';
 
 //Middlewares
 const staticMiddleware = express.static(path.join(__dirname, 'assets'));
@@ -26,6 +27,8 @@ const rateLimitMiddleware = rateLimit({
 const logFile = fs.createWriteStream(path.join(__dirname, 'access.log'), {flags:'a'});
 const morganMiddleware = morgan('combined', { stream: logFile});
 
+//MULTER PARA GERENCIAR IMAGENS
+
 export {
     staticMiddleware,
     urlencodedMiddleware,
@@ -33,5 +36,6 @@ export {
     securityMiddleware,
     compressionMiddlewware,
     rateLimitMiddleware,
-    morganMiddleware
+    morganMiddleware,
+    uploadMiddleware
 };

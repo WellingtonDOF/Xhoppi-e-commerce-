@@ -2,7 +2,7 @@ import ClienteModel from './ClienteSchema.js';
 
 class Cliente {
 
-    constructor(nome, sobrenome, cpf, dataNascimento, telefone, email, senha, file){
+    constructor(nome, sobrenome, cpf, dataNascimento, telefone, email, senha, file=null){
         this.nome=nome;
         this.sobrenome=sobrenome;
         this.cpf=cpf;
@@ -23,7 +23,6 @@ class Cliente {
             email: this.email,
             senha: this.senha,
             foto: this.file, //armazenar caminho do arquivo
-            //FAZER O ARQUIVO
         });
         return await newCliente.save();
     }
@@ -43,5 +42,6 @@ class Cliente {
     static async delete(id){
         return await ClienteModel.findByIdAndDelete(id);
     }
-
 }
+
+export default Cliente;

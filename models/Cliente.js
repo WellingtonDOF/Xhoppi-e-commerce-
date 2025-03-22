@@ -38,10 +38,16 @@ class Cliente {
     static async findByCpf(cpf){
         return await ClienteModel.findOne({cpf: cpf});
     }
+      
+    static async delete(cpf){
+        return await ClienteModel.findOneAndDelete({cpf : cpf});
+    }
 
+    /*
     static async delete(id){
         return await ClienteModel.findByIdAndDelete(id);
-    }
+    }*/
+        
 }
 
 export default Cliente;

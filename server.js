@@ -2,7 +2,7 @@ import express from 'express'
 import path from 'path'
 import __dirname from './utils/pathUtils.js';
 import dotenv from 'dotenv';
-import { routes } from './routes/index.js';
+import routes from './routes/index.js';
 import uploadsDirExists from './utils/createUploadsUtils.js';
 
 import {
@@ -13,8 +13,7 @@ import {
     uploadMiddleware
 } from './middlewares/middlewares.js';
 
-//Registrando todas as rotas de uma só vez
-routes.forEach(route=>app.use(route));
+
 import connectBD from './config/db.js';
 
 //Carregar as variáveis de ambiente do arquivo .env
@@ -28,6 +27,9 @@ const port = process.env.PORT;
 
 //Conecta ao banco de dados MongoDB
 connectBD();
+
+//Registrando todas as rotas de uma só vez
+routes.forEach(route=>app.use(route));
 
 //Motor de template
 app.set('views', path.join(__dirname, 'views')); //Definindo a pasta do template EJS

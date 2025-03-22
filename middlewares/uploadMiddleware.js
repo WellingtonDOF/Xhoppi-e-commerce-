@@ -1,14 +1,19 @@
 import multer from 'multer';
 import path from 'path';
 import fs from 'fs';
+import { fileURLToPath } from 'url';
+
+// Define o __dirname em ESM (EcmaScript Module)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Configuração do multer para armazenar imagens
 const storageMiddleware = multer.diskStorage({
     destination: (req, file, cb) => {
         const uploadDir = path.join(__dirname, '..', 'uploads');
-        // Verificar se a pasta 'uploads' existe, caso contrário, cria-la
+        // Verificar se a pasta 'uploads' existe, caso contrário, criá-la
         if (!fs.existsSync(uploadDir)) {
-            fs.mkdirSync(uploadDir);
+            fs.mkdirSync(uploadDir, { recursive: true });
         }
         cb(null, uploadDir); // Diretório para armazenar as imagens
     },

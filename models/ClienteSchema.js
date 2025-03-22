@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-//Schema do carro no MongoDB
+//Schema do cliente no MongoDB
 const ClienteSchema = new mongoose.Schema(
     {
         nome : {type: String, required: true},

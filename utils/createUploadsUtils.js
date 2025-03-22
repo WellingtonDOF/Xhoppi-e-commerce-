@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import __dirname from './pathUtils.js';
 
 // Função para garantir que a pasta 'uploads' exista
 const uploadsDirExists = () => {

@@ -4,7 +4,6 @@ import { uploadMiddleware } from '../middlewares/middlewares.js';
 
 const router = express.Router();
 
-
 //GET todos os clientes
 router.get('/clientes', ClienteController.getAllClientes);
 

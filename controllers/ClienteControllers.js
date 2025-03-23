@@ -125,7 +125,7 @@ class ClienteController{
     static async renderAllClientes(req, res){
         try {
             const clientes = await Cliente.findAll();
-            res.render('visualizar-cliente.ejs', {clientes: clientes});
+            res.render('visualizar-cliente', {clientes: clientes});
         } catch (error) {
             console.error('Erro ao carregar a página:', error);
             res.status(500).send('Erro interno');

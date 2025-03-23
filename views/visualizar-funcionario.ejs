@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="icon" href="../img/logo.png" type="image/png">
-    <title>Xhopii - Ver Produtos</title>
+    <title>Xhopii - Ver Funcionarios</title>
 </head>
 <body>
 
@@ -33,7 +33,19 @@
     <section class="conteudo-visualizar">
         <section class="conteudo-visualizar-box">
             <h1>Funcionários</h1>
-            <!-- INSERIR AQUI O RESULTADO DA CONSULTA POR FUNCIONÁRIOS -->
+            <% funcionarios.forEach(funcionario =>{
+                %>
+                <section class="conteudo-bloco">
+                    <h2><%= funcionario.nome %> <%= funcionario.sobrenome %></h2>
+                    <p>CPF: <%= funcionario.cpf %></p>
+                    <p>Data Nascimento: <%= funcionario.dataNascimento %></p>
+                    <p>Telefone: <%= funcionario.telefone %></p>
+                    <p>Cargo: <%= funcionario.cargo %></p>
+                    <p>Salário: <%= funcionario.salario %></p>
+                    <p>E-mail: <%= funcionario.email %></p>
+                </section>
+            <%}); %>
+            <!-- INSERIR AQUI O RESULTADO DA CONSULTA POR FUNCIONÁRIOS -->    
         </section>
     </section>
 
